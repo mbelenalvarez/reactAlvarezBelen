@@ -1,34 +1,50 @@
-import React from "react"
-import CartWidget from "./CartWidget"
+// import CartWidget from "./CartWidget"
 
-function Navbar() {
-    return (
-        <React.Fragment>
-            <h1> E-commerce </h1>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">Navbar</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-            <CartWidget />
-        </React.Fragment>
-    )
-}
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+const navItems = ['Inicio', 'Productos', 'Contacto'];
+
+const Navbar = () => {
+  return (
+  <Box sx={{ display: 'flex' }}>
+    <CssBaseline />
+    <AppBar component="nav">
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { sm: 'none' } }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+        >
+        </Typography>
+        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          {navItems.map((item) => (
+            <Button key={item} sx={{ color: '#fff' }}>
+              {item}
+            </Button>
+          ))}
+        </Box>
+      </Toolbar>
+    </AppBar>
+      <Toolbar />
+    </Box>
+);
+};
 
 export default Navbar;
