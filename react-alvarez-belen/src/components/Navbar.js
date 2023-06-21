@@ -1,4 +1,4 @@
-// import CartWidget from "./CartWidget"
+import CartWidget from "./CartWidget"
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -13,6 +13,11 @@ import Button from '@mui/material/Button';
 const navItems = ['Inicio', 'Productos', 'Contacto'];
 
 const Navbar = () => {
+  const [setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
   return (
   <Box sx={{ display: 'flex' }}>
     <CssBaseline />
@@ -28,7 +33,7 @@ const Navbar = () => {
           <MenuIcon />
         </IconButton>
         <Typography
-          variant="h6"
+          variant="h8"
           component="div"
           sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
         >

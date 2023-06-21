@@ -1,9 +1,16 @@
-import React from "react"
-import { BsFillCartFill } from 'react-icons/bs'
+import React from 'react'
 
-function CartWidget () {
-    return (
-    <h3> <BsFillCartFill /> </h3>)
-          }
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge, IconButton } from '@mui/material';
 
-export default CartWidget
+const CartWidget = ({ cartQuantity }) => {
+  return (
+    <IconButton>
+        <Badge badgeContent={cartQuantity} color="error">
+            <ShoppingCartIcon htmlColor='#fff' />
+        </Badge>
+    </IconButton>
+  )
+}
+
+export default CartWidget;
