@@ -45,7 +45,8 @@ const Navbar = () => {
             </Button>
           ))}
         </Box>
-      </Toolbar>
+        <CartWidget />
+    </Toolbar>
     </AppBar>
       <Toolbar />
     </Box>
