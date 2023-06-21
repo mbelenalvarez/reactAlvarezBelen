@@ -1,4 +1,5 @@
 import CartWidget from "./CartWidget"
+import ItemListContainer from "./ItemListContainer"
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -13,6 +14,7 @@ import Button from '@mui/material/Button';
 const navItems = ['Inicio', 'Productos', 'Contacto'];
 
 const Navbar = () => {
+  const cart = 2;
   const [setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -36,7 +38,7 @@ const Navbar = () => {
           variant="h8"
           component="div"
           sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-        >
+        > Tienda Online
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {navItems.map((item) => (
@@ -45,7 +47,8 @@ const Navbar = () => {
             </Button>
           ))}
         </Box>
-        <CartWidget />
+        <CartWidget cartQuantity={cart} />
+        <ItemListContainer />
     </Toolbar>
     </AppBar>
       <Toolbar />
