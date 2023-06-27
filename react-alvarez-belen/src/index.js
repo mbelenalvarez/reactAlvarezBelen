@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import NavBar from '../src/components/Navbar';
+import Productos from '../src/components/ProductosList';
+import CardItem from '../src/components/CardItem';
+import CartWidget from '../src/components/CartWidget';
+import ItemListContainer from "../src/components/ItemListContainer"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,8 +16,17 @@ root.render(
     <App />
   </React.StrictMode>
 );
+const HomePage = () => {
+  return (
+    <div>
+        <NavBar />
+        <Productos />
+        <CardItem />
+        <ItemListContainer />
+        <CartWidget />
+    </div>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+export default HomePage;
 reportWebVitals();
