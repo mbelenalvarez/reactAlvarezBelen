@@ -2,6 +2,7 @@ import './App.css';
 import CardItem from './components/CardItem';
 import CartWidget from './components/CartWidget';
 import Navbar from './components/Navbar';
+import ProductosList from './components/ProductosList';
 
 function App() {
   return (
