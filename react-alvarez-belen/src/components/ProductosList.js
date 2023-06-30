@@ -3,7 +3,7 @@ import ItemListContainer from "./ItemListContainer";
 import { listApi } from "../api";
 
 
-const SectionApi = () => {
+const Productos = () => {
     const [items, setItem] = React.useState([]);
 
     React.useEffect(() => {
@@ -25,4 +25,4 @@ const SectionApi = () => {
     )
 }
 
-export default SectionApi;
+export default Productos;

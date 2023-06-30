@@ -1,5 +1,4 @@
 import CartWidget from "./CartWidget"
-import ItemListContainer from "./ItemListContainer"
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -48,7 +47,6 @@ const Navbar = () => {
           ))}
         </Box>
         <CartWidget cartQuantity={cart} />
-        <ItemListContainer />
     </Toolbar>
     </AppBar>
       <Toolbar />
