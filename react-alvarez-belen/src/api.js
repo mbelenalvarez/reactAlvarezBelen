@@ -1,3 +1,4 @@
-export const listApi = () => {
-    return fetch('https://api.storerestapi.com/products');
-}
+export const listApi = (search) => {
+        return fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${search}`)
+    }
+
