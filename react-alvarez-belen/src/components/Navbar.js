@@ -19,6 +19,7 @@ const Navbar = () => {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
   return (
   <Box sx={{ display: 'flex' }}>
     <CssBaseline />

@@ -1,6 +1,4 @@
 import Box from '@mui/material/Box';
-import CardItem from './CardItem';
-
 
 const ItemListContainer = ({ items, loading}) => {
     return (
@@ -10,12 +8,9 @@ const ItemListContainer = ({ items, loading}) => {
               Boolean(loading)        ?
                   <p>cargando...</p>
               :
-          items.map((item, index) => {
-              return (
-                  <CardItem key={index + item.title} name={item.title} price={item.price} imageURL={item.image} description={item.description} />
-              )
-          })
-      } </div>
+              items.map((item) => <Item data={item}  />)
+          }
+    </div>
   </Box>
     )
 }
