@@ -8,7 +8,7 @@ const CATEGORIES = [{id: 'all', title: 'Todos los productos'}, {id: 'jewelery', 
 const ItemListContainer = () => {
   const [productos, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ const ItemListContainer = () => {
            Boolean(loading)        ?
                <p>cargando...</p>
            :
-           item.map((item) => <Item data={item}  />)
+           productos.map((item) => <Item data={item}  />)
        }
  </div>
 </Box>)}
