@@ -3,7 +3,6 @@ import CardItem from './CardItem';
 import { Card } from '@mui/material'
 import { Link } from 'react-router-dom';
 
-
 const Item = ({ item }) => {
 
   return (
@@ -21,9 +20,8 @@ const Item = ({ item }) => {
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>Price: ${item.price}</Card.Text>
-          <Link className='btn btn-primary' to={`$(item.id)`}> View details </Link>
+          <Link className='btn btn-primary' to={`${item.id}`}> View details </Link>
         </Card.Body>
-    
       </CardItem>
     </div>
   );

@@ -1,7 +1,8 @@
 import Box from '@mui/material/Box';
 import { useNavigate, useParams } from 'react-router-dom';
 import Item from './Item';
-import { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
+import TabsMenu from './Tab';
 
 const CATEGORIES = [{id: 'all', title: 'Todos los productos'}, {id: 'jewelery', title: 'Joyas'}, {id: 'electronics', title: 'Electrónica'}]
 
@@ -24,7 +25,7 @@ const ItemListContainer = () => {
   useEffect (() => {
     setLoading (true);
 
-    const URL= id ? `https://fakestoreapi.com/products/${id}`: `https://fakestoreapi.com/products/`
+    const URL= id ? `https://fakestoreapi.com/products/category/${id}` : `https://fakestoreapi.com/products/`
     const getCollection = fetch(URL);
 
     getCollection
@@ -44,7 +45,10 @@ const ItemListContainer = () => {
 
   return (
    <Box display={'flex'} justifyContent={'center'} flexDirection={'row'} gap={5} flexWrap={'wrap'}>
-   <div style={containerStyle}>
+    <div>
+      <TabsMenu current={current} item={CATEGORIES} /> 
+    </div>
+   <div>
        {
            Boolean(loading)        ?
                <p>cargando...</p>

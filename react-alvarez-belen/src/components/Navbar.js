@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import TabsMenu from "./Tab";
 
 
 const navItems = ['Inicio', 'Productos', 'Contacto'];
@@ -52,7 +51,6 @@ const Navbar = () => {
         <CartWidget cartQuantity={cart} />
     </Toolbar>
     </AppBar>
-    <TabsMenu />
       <Toolbar />
     </Box>
 );

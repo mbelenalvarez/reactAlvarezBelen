@@ -2,8 +2,8 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CartWidget from './components/CartWidget';
-import Item from './components/Item';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path={'/'} element={<ItemListContainer />}  />
         <Route path={'/products/:category'} element={<ItemListContainer />}  />
-        <Route path={'/product/:id'} element={<Item />}  />
+        <Route path={'/product/:id'} element={<ItemDetailContainer />}  />
         <Route path={'/cart'} element={<CartWidget />} />
       </Routes>
     </BrowserRouter>
