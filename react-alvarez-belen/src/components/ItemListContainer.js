@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import { useNavigate, useParams } from 'react-router-dom';
 import Item from './Item';
-import { React, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TabsMenu from './Tab';
 
 const CATEGORIES = [{id: 'all', title: 'Todos los productos'}, {id: 'jewelery', title: 'Joyas'}, {id: 'electronics', title: 'Electrónica'}]
@@ -17,12 +17,13 @@ const ItemListContainer = () => {
 
   console.log(id);
 
-  React.useEffect(() => {
+  React.useEffect (() => {
     if (!CATEGORIES.some(cat => cat.id === id)) {
       navigate('/products/all');
     }
   }, [id, navigate])
-  useEffect (() => {
+  
+  React.useEffect (() => {
     setLoading (true);
 
     const URL= id ? `https://fakestoreapi.com/products/category/${id}` : `https://fakestoreapi.com/products/`
