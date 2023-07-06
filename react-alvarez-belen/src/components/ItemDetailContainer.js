@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import { useNavigate, useParams } from 'react-router-dom';
-import Item from './Item';
+import { useParams } from 'react-router-dom';
+import DetailContainer from './DetailContainer';
 import { React, useEffect, useState } from 'react';
 
 const ItemDetailContainer = () => {
@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
            Boolean(loading)        ?
                <p>cargando...</p>
            :
-           productos.map((item) => <Item product={product}  />)
+           productos.map((item) => <DetailContainer product={id}  />)
        }
  </div>
 </Box>)
