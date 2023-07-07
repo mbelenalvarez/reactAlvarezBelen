@@ -17,13 +17,13 @@ const ItemListContainer = () => {
 
   console.log(id);
 
-  React.useEffect (() => {
+  useEffect (() => {
     if (!CATEGORIES.some(cat => cat.id === id)) {
       navigate('/products/all');
     }
   }, [id, navigate])
   
-  React.useEffect (() => {
+  useEffect (() => {
     setLoading (true);
 
     const URL= id ? `https://fakestoreapi.com/products/category/${id}` : `https://fakestoreapi.com/products/`
