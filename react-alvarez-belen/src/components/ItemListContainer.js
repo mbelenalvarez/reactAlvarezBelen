@@ -15,8 +15,6 @@ const ItemListContainer = () => {
 
   const current = CATEGORIES.some(cat => cat.id === id) ? id : 'all';
 
-  console.log(id);
-
   useEffect (() => {
     if (!CATEGORIES.some(cat => cat.id === id)) {
       navigate('/products/all');
@@ -26,7 +24,7 @@ const ItemListContainer = () => {
   useEffect (() => {
     setLoading (true);
 
-    const URL= id ? `https://fakestoreapi.com/products/category/${id}` : `https://fakestoreapi.com/products/`
+    const URL= id ? `https://fakestoreapi.com/products/${id}` : `https://fakestoreapi.com/products/`
     const getCollection = fetch(URL);
 
     getCollection
@@ -44,10 +42,12 @@ const ItemListContainer = () => {
     .finally(() => setLoading(false))
   }, [id] );
 
+
+
   return (
    <Box display={'flex'} justifyContent={'center'} flexDirection={'row'} gap={5} flexWrap={'wrap'}>
     <div>
-      <TabsMenu current={current} item={CATEGORIES} /> 
+      <TabsMenu current={current} items={CATEGORIES} /> 
     </div>
    <div>
        {
