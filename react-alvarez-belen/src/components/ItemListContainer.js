@@ -42,8 +42,6 @@ const ItemListContainer = () => {
     .finally(() => setLoading(false))
   }, [id] );
 
-
-
   return (
    <Box display={'flex'} justifyContent={'center'} flexDirection={'row'} gap={5} flexWrap={'wrap'}>
     <div>
