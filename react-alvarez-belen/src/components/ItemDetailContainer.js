@@ -4,7 +4,7 @@ import DetailContainer from './DetailContainer';
 import { React, useEffect, useState } from 'react';
 
 const ItemDetailContainer = () => {
-  const [productos, setProducts] = useState([]);
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
   
   const {id} = useParams ()
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
     getCollection
     .then ((res) => res.json())
     .then ((res) => {
-      setProducts (res.find(product => product.id === id))
+      setProduct (res)
       })
     .finally(() => setLoading(false))
   }, [id] );
@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
            Boolean(loading)        ?
                <p>cargando...</p>
            :
-           productos.map((item) => <DetailContainer product={id}  />)
+           <DetailContainer product={product} />
        }
  </div>
 </Box>)
