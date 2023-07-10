@@ -4,7 +4,7 @@ import Item from './Item';
 import React, { useEffect, useState } from 'react';
 import TabsMenu from './Tab';
 
-CATEGORIES = [ {id: 'jewelery', title: 'Joyas'}, {id: 'electronics', title: 'Electrónica'}, {id: '', title: 'Todos los productos'}]
+const CATEGORIES = [ {id: 'jewelery', title: 'Joyas'}, {id: 'electronics', title: 'Electrónica'}, {id: '', title: 'Todos los productos'}]
 
 const ItemListContainer = () => {
   const [productos, setProducts] = useState([]);
@@ -13,7 +13,7 @@ const ItemListContainer = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const current = CATEGORIES.some(cat => cat.id === id) ? id : "";
+  const current = CATEGORIES.some(cat => cat.id === id)
 
   useEffect (() => {
     if (!CATEGORIES.some(cat => cat.id === id)) {
