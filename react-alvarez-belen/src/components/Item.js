@@ -1,31 +1,26 @@
-import React, { cardRef } from 'react';
-import CardItem from './CardItem';
-import { Card } from '@mui/material'
+import React from 'react';
+import { Card, CardMedia, CardContent, Typography } from '@mui/material'
 import { Link } from 'react-router-dom';
 
-const Item = ({ item }) => {
-
+const Item = ({ data }) => {
   return (
     <div>
-      <CardItem ref={cardRef} style={{ maxWidth: '300px' }}>
-        <Card.Img
-          style={{
-            maxHeight: '100%',
-            objectFit: 'contain',
-          }}
-          variant="top"
-          src={item.image}
-          alt={item.Title}
+      <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+          component="img"
+          height="140"
+          src={data.image}
+          alt={data.title}
         />
-        <Card.Body>
-          <Card.Title>{item.title}</Card.Title>
-          <Card.Text>Price: ${item.price}</Card.Text>
-          <Link className='btn btn-primary' to={`${item.id}`}> View details </Link>
-        </Card.Body>
-      </CardItem>
+        <CardContent>
+          <Typography>{data.title}</Typography>
+          <Typography>Price: ${data.price}</Typography>
+          <Link className='btn btn-primary' to={`/product/${data.id}`}> View details </Link>
+        </CardContent>
+      </Card>
     </div>
   );
 };
 
-export default Item;
+export default Item; 
 

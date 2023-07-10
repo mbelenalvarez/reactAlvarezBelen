@@ -24,21 +24,22 @@ const ItemListContainer = () => {
   useEffect (() => {
     setLoading (true);
 
-    const URL= id ? `https://fakestoreapi.com/products/${id}` : `https://fakestoreapi.com/products/`
+    const URL=  `https://fakestoreapi.com/products/`
     const getCollection = fetch(URL);
 
     getCollection
     .then ((res) => res.json())
     .then ((res) => {
-      const data = res.results?.map((item) => ({
-        id: item.id,
-        title: item.title,
-        price: item.price,
-        image: item.image
-      }))
-      setProducts(data);
-      setLoading (true);
-    })
+      if(id){
+        
+        setProducts(res.filter((item)=> item.category === id));
+        setLoading (true);
+      }else{
+    
+        setProducts(res);
+        setLoading (true);
+      }
+      })
     .finally(() => setLoading(false))
   }, [id] );
 
