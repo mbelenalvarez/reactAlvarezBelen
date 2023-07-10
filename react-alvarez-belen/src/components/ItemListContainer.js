@@ -4,7 +4,7 @@ import Item from './Item';
 import React, { useEffect, useState } from 'react';
 import TabsMenu from './Tab';
 
-const CATEGORIES = [{id: 'all', title: 'Todos los productos'}, {id: 'jewelery', title: 'Joyas'}, {id: 'electronics', title: 'Electrónica'}]
+const CATEGORIES = [ {id: 'jewelery', title: 'Joyas'}, {id: 'electronics', title: 'Electrónica'}]
 
 const ItemListContainer = () => {
   const [productos, setProducts] = useState([]);
@@ -13,11 +13,11 @@ const ItemListContainer = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const current = CATEGORIES.some(cat => cat.id === id) ? id : 'all';
+  const current = CATEGORIES.some(cat => cat.id === id) ? id : "";
 
   useEffect (() => {
     if (!CATEGORIES.some(cat => cat.id === id)) {
-      navigate('/products/all');
+      navigate('/products');
     }
   }, [id, navigate])
   
@@ -44,18 +44,18 @@ const ItemListContainer = () => {
   }, [id] );
 
   return (
-   <Box display={'flex'} justifyContent={'center'} flexDirection={'row'} gap={5} flexWrap={'wrap'}>
+    <Box display={'flex'} justifyContent={'center'} flexDirection={'row'} gap={5} flexWrap={'wrap'}>
+     <div>
+       <TabsMenu current={current} items={CATEGORIES} /> 
+     </div>
     <div>
-      <TabsMenu current={current} items={CATEGORIES} /> 
-    </div>
-   <div>
-       {
-           Boolean(loading)        ?
-               <p>cargando...</p>
-           :
-           productos.map((item) => <Item data={item}  />)
-       }
- </div>
-</Box>)}
+        {
+            Boolean(loading)        ?
+                <p>cargando...</p>
+            :
+            productos.map((item) => <Item data={item} key={item.id} />)
+        }
+  </div>
+ </Box>)}
 
 export default ItemListContainer
