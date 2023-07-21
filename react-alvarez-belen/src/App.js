@@ -4,10 +4,15 @@ import Navbar from './components/Navbar';
 import CartWidget from './components/CartWidget';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ContextProvider from './context/AppContext';
 
 
 function App() {
+
+  const [carrito, setCarrito] = useState ([]);
+
   return (
+    <ContextProvider value={{carrito, setCarrito}}>
     <BrowserRouter>
     <Navbar />
       <Routes>
@@ -17,6 +22,7 @@ function App() {
         <Route path={'/cart'} element={<CartWidget />} />
       </Routes>
     </BrowserRouter>
+    </ContextProvider>
   );
 }
 
