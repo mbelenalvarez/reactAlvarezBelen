@@ -16,7 +16,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = gestFirestore (app);
+const db = getFirestore (app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
