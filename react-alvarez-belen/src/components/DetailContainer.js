@@ -8,12 +8,12 @@ const ProductDetail = ({product}) => {
 
   const addToCarrito = (quantity) => {
     addProductToCarrito({
-      id: id,
-      title: title,
-      pricePerUnit: price,
+      id: product.id,
+      title: product.title,
+      pricePerUnit: product.price,
       quantity: quantity,
-      imageURL: imageURL
-    })
+      imageURL: product.imageURL
+    });
   };
   
   return (

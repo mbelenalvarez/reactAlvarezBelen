@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography } from '@mui/material'
 import { Link } from 'react-router-dom';
-import ItemCount from '../item-count';
+import ItemCount from './ItemCount';
 import { AppContext } from '../context/AppContext';
 
 const Item = ({ data }) => {

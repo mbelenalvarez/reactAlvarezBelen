@@ -8,11 +8,8 @@ import ContextProvider from './context/AppContext';
 
 
 function App() {
-
-  const [carrito, setCarrito] = useState ([]);
-
   return (
-    <ContextProvider value={{carrito, setCarrito}}>
+    <ContextProvider>
     <BrowserRouter>
     <Navbar />
       <Routes>
