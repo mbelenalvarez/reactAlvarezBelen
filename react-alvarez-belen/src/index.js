@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore"
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDfP5NWEp4CkxZFwBzpLPs6nM_vNUZSD20",
+  authDomain: "react-alvarez-belen.firebaseapp.com",
+  projectId: "react-alvarez-belen",
+  storageBucket: "react-alvarez-belen.appspot.com",
+  messagingSenderId: "525468919071",
+  appId: "1:525468919071:web:9d20417a6c3a28e13a3c2a"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = gestFirestore (app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

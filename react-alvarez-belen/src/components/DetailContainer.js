@@ -2,9 +2,9 @@ import React from 'react'
 import ItemCount from './ItemCount';
 import { AppContext } from '../context/AppContext';
 
-const { addProductToCarrito } = React.useContext(AppContext);
-
 const ProductDetail = ({product}) => {
+
+  const { addProductToCarrito } = React.useContext(AppContext);
 
   const addToCarrito = (quantity) => {
     addProductToCarrito({
