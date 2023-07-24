@@ -29,7 +29,7 @@ const ItemListContainer = () => {
       getDocs(productRef)
       .then((snapshot) => {
           setLoading(false);
-          setItems(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
+          setProducts(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
         })
       }
       else if (CATEGORIES.some(categories => categories.id === id) ) {
@@ -37,7 +37,7 @@ const ItemListContainer = () => {
 
       getDocs(q)
       .then((snapshot) => {
-        setItems(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
+        setProducts(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
         setLoading(false);
       })
     }

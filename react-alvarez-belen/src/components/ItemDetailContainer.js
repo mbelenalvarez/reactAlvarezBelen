@@ -6,6 +6,8 @@ import { db } from '..';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
+
+  console.log(product);
   
   const {id} = useParams ()
   
@@ -25,6 +27,7 @@ const ItemDetailContainer = () => {
        }
  </div>
 )
+
 };
 
 export default ItemDetailContainer
