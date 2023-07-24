@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 
     getDoc(docRef)
     .then((resp) => {
-      setProduct ({...resp.data, resp.id});
+      setProduct ({...resp.data, id:resp.id});
     })
   }, [id] );
 
