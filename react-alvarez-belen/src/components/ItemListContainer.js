@@ -32,7 +32,7 @@ const ItemListContainer = () => {
           setItems(snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
         })
       }
-    } else if (CATEGORIES.some(categories => categories.id === id) ) {
+      else if (CATEGORIES.some(categories => categories.id === id) ) {
       const q = query(productRef, where("category", '==', id))
 
       getDocs(q)
