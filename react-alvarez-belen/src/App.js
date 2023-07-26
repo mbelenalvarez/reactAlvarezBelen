@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CartWidget from './components/CartWidget';
 import Cart from './components/Cart';
-import Checkout from './components/Checkout';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ContextProvider from './context/AppContext';
+import Checkout from './components/checkout';
 
 
 function App() {

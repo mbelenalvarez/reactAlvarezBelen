@@ -69,12 +69,12 @@ const Navbar = () => {
             </Button>
           ))}
         </Box>
-        quantityCart === 0 ?
+        {quantityCart === 0 ?
             null
             :
             <Box sx={{ flexGrow: 0 }}>
                 <CartWidget cartQuantity={quantityCart} />
-          </Box>
+          </Box>} 
     </Toolbar>
     </AppBar>
       <Toolbar />
