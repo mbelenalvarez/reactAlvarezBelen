@@ -8,17 +8,34 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom'
+import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
+import { AppContext } from '../context/AppContext';
+
+const pages = [{ id: 'products', title: 'Products'}];
 
 const navItems = ['Inicio', 'Productos', 'Contacto'];
 
 const Navbar = () => {
-  const cart = 2;
-  const [setMobileOpen] = React.useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  <nav className="navbar">
+  <li><Link className="menu-link" to="/">Inicio</Link></li>
+  <li><Link className="menu-link" to="/products">Productos</Link></li>
+  </nav>
+  
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate();
+
+  const { quantityCart } = React.useContext(AppContext);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
+
+  const handleNavigate = (id) => {
+    navigate('/' + id);
+  }
 
   return (
   <Box sx={{ display: 'flex' }}>
@@ -29,10 +46,15 @@ const Navbar = () => {
           color="inherit"
           aria-label="open drawer"
           edge="start"
-          onClick={handleDrawerToggle}
+          onClick={handleOpenNavMenu}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
-          <MenuIcon />
+          <MenuIcon {pages.map((page) => (
+                <MenuItem key={page.id} onClick={() => handleNavigate(page.id)}>                
+                  <Typography textAlign="center">{page.title}</Typography>
+                </MenuItem>
+                ))} >
+                </MenuIcon> 
         </IconButton>
         <Typography
           variant="h8"
@@ -47,7 +69,12 @@ const Navbar = () => {
             </Button>
           ))}
         </Box>
-        <CartWidget cartQuantity={cart} />
+        quantityCart === 0 ?
+            null
+            :
+            <Box sx={{ flexGrow: 0 }}>
+                <CartWidget cartQuantity={quantityCart} />
+          </Box>
     </Toolbar>
     </AppBar>
       <Toolbar />

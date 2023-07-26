@@ -9,8 +9,16 @@ const ContextProvider = ({children}) => {
          setCarrito([...carrito, product]);
     }
 
+    const precioTotal = () => {
+        return carrito.reduce((acc, prod) => acc + prod.price * prod.stock, 0);
+    }
+
+    const vaciarCarrito = () => {
+        setCarrito([]);
+    }
+
     return (
-        <AppContext.Provider value={{ carrito, addProductToCarrito, quantityCart: carrito.length  }}>
+        <AppContext.Provider value={{ carrito, addProductToCarrito, precioTotal, vaciarCarrito, quantityCart: carrito.length  }}>
             { children }
         </AppContext.Provider>
     )

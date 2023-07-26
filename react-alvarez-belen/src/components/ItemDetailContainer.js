@@ -6,8 +6,6 @@ import { db } from '..';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
-
-  console.log(product);
   
   const {id} = useParams ()
   
@@ -17,7 +15,7 @@ const ItemDetailContainer = () => {
 
     getDoc(docRef)
     .then((resp) => {
-      setProduct ({...resp.data, id:resp.id});
+      setProduct ({...resp.data(), id:resp.id});
     })
   }, [id] );
 
