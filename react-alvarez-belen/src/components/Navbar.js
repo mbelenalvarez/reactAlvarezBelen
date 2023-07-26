@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppContext } from '../context/AppContext';
@@ -49,11 +49,11 @@ const Navbar = () => {
           onClick={handleOpenNavMenu}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
-          <MenuIcon {pages.map((page) => (
+          <MenuIcon> {pages.map((page) => (
                 <MenuItem key={page.id} onClick={() => handleNavigate(page.id)}>                
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
-                ))} >
+                ))} 
                 </MenuIcon> 
         </IconButton>
         <Typography
