@@ -19,7 +19,7 @@ const ItemListContainer = () => {
 
   useEffect (() => {
     if (!CATEGORIES.some(cat => cat.id === id)) {
-      navigate('/products');
+      navigate('/products/all');
     }
   }, [id, navigate])
   
