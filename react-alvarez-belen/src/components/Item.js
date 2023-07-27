@@ -6,7 +6,7 @@ import { AppContext } from '../context/AppContext';
 
 const Item = ({ data }) => {
 
-  const {id, title, imageURL, stock, price} = data;
+  const {id, title, image, stock, price} = data;
 
   const { addProductToCarrito } = React.useContext(AppContext);
 
@@ -16,7 +16,7 @@ const Item = ({ data }) => {
       title: title,
       pricePerUnit: price,
       quantity: quantity,
-      imageURL: imageURL
+      imageURL: image
     })
   };
 

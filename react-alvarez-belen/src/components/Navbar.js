@@ -14,8 +14,6 @@ import { AppContext } from '../context/AppContext';
 
 const pages = [{ id: 'products', title: 'Products'}];
 
-const navItems = ['Inicio', 'Productos', 'Contacto'];
-
 const Navbar = () => {
   
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -57,11 +55,10 @@ const Navbar = () => {
         > Tienda Online
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-          {navItems.map((item) => (
-            <Link key={item} style={{ color: '#fff' }}>
-              {item}
+            <Link style={{ color: '#fff' }} className="menu-link" to="/products/all"> Inicio
             </Link>
-          ))}
+            <Link style={{ color: '#fff' }} className="menu-link" to="/products/all"> Producto
+            </Link>
         </Box>
         {quantityCart === 0 ?
             null
