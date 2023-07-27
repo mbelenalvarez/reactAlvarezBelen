@@ -10,7 +10,7 @@ const ContextProvider = ({children}) => {
     }
 
     const precioTotal = () => {
-        return carrito.reduce((acc, prod) => acc + prod.price * prod.stock, 0);
+        return carrito.reduce((acc, prod) => acc + prod.pricePerUnit * prod.quantity, 0);
     }
 
     const vaciarCarrito = () => {

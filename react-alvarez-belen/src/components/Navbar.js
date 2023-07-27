@@ -18,11 +18,6 @@ const pages = [{ id: 'products', title: 'Products'}];
 const navItems = ['Inicio', 'Productos', 'Contacto'];
 
 const Navbar = () => {
-
-  <nav className="navbar">
-  <li><Link className="menu-link" to="/">Inicio</Link></li>
-  <li><Link className="menu-link" to="/products">Productos</Link></li>
-  </nav>
   
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const navigate = useNavigate();
@@ -64,9 +59,9 @@ const Navbar = () => {
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {navItems.map((item) => (
-            <Button key={item} sx={{ color: '#fff' }}>
+            <Link key={item} sx={{ color: '#fff' }}>
               {item}
-            </Button>
+            </Link>
           ))}
         </Box>
         {quantityCart === 0 ?

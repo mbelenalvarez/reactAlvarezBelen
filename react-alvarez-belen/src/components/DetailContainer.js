@@ -12,7 +12,7 @@ const ProductDetail = ({product}) => {
       title: product.title,
       pricePerUnit: product.price,
       quantity: quantity,
-      imageURL: product.imageURL
+      imageURL: product.image
     });
   };
   

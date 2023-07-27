@@ -19,9 +19,9 @@ const Cart = () => {
                 <div key={prod.id}>
                     <br />
                     <h3>{prod.title}</h3>
-                    <p>Precio unit: ${prod.price}</p>
-                    <p>Precio total: ${prod.price * prod.stock}</p>
-                    <p>Cantidad: {prod.stock}</p>
+                    <p>Precio unit: ${prod.pricePerUnit}</p>
+                    <p>Precio total: ${prod.pricePerUnit * prod.quantity}</p>
+                    <p>Cantidad: {prod.quantity}</p>
                     <br />
                 </div>
             ))
