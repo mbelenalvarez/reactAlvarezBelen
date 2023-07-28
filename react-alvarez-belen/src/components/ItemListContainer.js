@@ -49,7 +49,7 @@ const ItemListContainer = () => {
      <div>
        <TabsMenu current={current} items={CATEGORIES} /> 
      </div>
-    <div>
+    <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
         {
             Boolean(loading)        ?
                 <p>cargando...</p>

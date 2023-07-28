@@ -52,13 +52,13 @@ const Navbar = () => {
           variant="h8"
           component="div"
           sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-        > <Link style={{ color: '#fff' }}  to="/"> Tienda Online
+        > <Link style={{ color: '#fff', textDecoration: "none" }}  to="/"> Tienda Online
         </Link>
         </Typography>
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Link style={{ color: '#fff' }} className="menu-link" to="/"> Inicio
+            <Link style={{ color: '#fff', textDecoration: "none", margin: "1rem" }} className="menu-link" to="/"> Inicio
             </Link>
-            <Link style={{ color: '#fff', textDecoration: 'underline', padding: 10 }} className="menu-link" to="/products/all"> Producto
+            <Link style={{ color: '#fff', textDecoration: "none", margin: "1rem" }} className="menu-link" to="/products/all"> Producto
             </Link>
         </Box>
         {quantityCart === 0 ?
