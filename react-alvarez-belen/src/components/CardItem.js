@@ -3,7 +3,7 @@ import React from 'react'
 
 const CardItem = ({ title, price, description, imageURL }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345}}>
       <CardMedia
         component="img"
         alt={title}

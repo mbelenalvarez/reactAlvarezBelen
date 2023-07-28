@@ -22,7 +22,7 @@ const Item = ({ data }) => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 500, display: 'flex', justifyContent: 'center', padding: 2 }}>
         <CardMedia
           component="img"
           height="140"
